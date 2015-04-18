@@ -1,1 +1,1 @@
-# msohu_url_detector
+# url_detector
