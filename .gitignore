@@ -1,0 +1,5 @@
+# Python:
+*.pyc
+*.so
+*.egg
+*.egg-info
