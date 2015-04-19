@@ -10,7 +10,7 @@ import requests
 import random
 import time
 from urlfilter import url_is_similar, url_is_repeat, url_contain_custom_focus
-socket.setdefaulttimeout(2)
+socket.setdefaulttimeout(3)
 
 
 html = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
@@ -63,7 +63,7 @@ def check_link(url, focuskey):
     try:
         response = requests.get(url, headers = {'Accept':html,'Accept-Encoding':gzip,
                 'Accept-Language':chinese,'Cache-Control':'no-cache','Connection':'keep-alive',
-                'User-Agent':random_agent(user_agent)},timeout = 2)
+                'User-Agent':random_agent(user_agent)},timeout = 3)
     except requests.exceptions.ConnectionError:
         write_log('ConnectionError', url)
     except requests.exceptions.HTTPError:
