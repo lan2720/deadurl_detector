@@ -36,9 +36,9 @@ def get_all_links(page, baseurl, focuskey = []):
     """获取整个页面的链接 向队列中加入新url"""
     for url in re.finditer(url_pat, page):
         url = url.group()
-        if url in filterurl or url_is_repeat(url): #or url_is_similar(url):
+        if url in filterurl or url_is_repeat(url):#or url_is_similar(url):
             continue
-        if not url_contain_custom_focus(url, focuskey):
+        if not url_contain_custom_focus(url, focuskey): # 是否含特定域名
             continue
         if url.startswith("http"):
             crawl_queue.put(url)
