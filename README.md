@@ -1,13 +1,13 @@
 # deadurl_detector
 
-## 1.获取链接
+## 获取链接
 requests请求网页
 
 re正则提取页面url
 
 ---
 
-##2.url过滤
+## url过滤
 url去重
 
 url是否含有特点域名
