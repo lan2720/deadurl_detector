@@ -32,7 +32,7 @@ crawl_queue = Queue.Queue()
 # 正则提取href
 url_pat = re.compile(r'(?<=href=\").*?(?=\")', re.M)
 
-def get_all_links(page, baseurl, focuskey = []): 
+def get_all_links(page, baseurl, focuskey = ()): 
     """获取整个页面的链接 向队列中加入新url"""
     for url in re.finditer(url_pat, page):
         url = url.group()
@@ -96,7 +96,7 @@ class CrawlUrl(threading.Thread):
 
 def main():
     for i in range(10):
-        crawlthread = CrawlUrl(crawl_queue, focuskey = ['m.sohu.com'])
+        crawlthread = CrawlUrl(crawl_queue, focuskey = ('m.sohu.com'))
         crawlthread.setDaemon(True)
         crawlthread.start()
 
