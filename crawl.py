@@ -96,7 +96,7 @@ class CrawlUrl(threading.Thread):
 
 def main():
     for i in range(10):
-        crawlthread = CrawlUrl(crawl_queue, focuskey = ('m.sohu.com'))
+        crawlthread = CrawlUrl(crawl_queue, focuskey = [m.sohu.com'])
         crawlthread.setDaemon(True)
         crawlthread.start()
 
